@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Celsius to Fahrenheit</title>
+    </head>
+    <body>
+        <div class="left">
+            <div class="numbers">
+
+            </div>
+            <div id="cels_div">
+                <div id="index">
+                </div>
+            </div>
+            <div class="round"></div>
+        </div>
+        <div class="right">
+
+            <div class="numbers">
+
+            </div>
+            <div id="far_div">
+                <div id="far_index">
+                </div>
+            </div>
+            <div class="round"></div>
+
+        </div>
+        <div class="center">
+            <label for="celsius" id="lbl">Celsius</label>
+            <input type="text"  id="celsius">
+            <span id="txt">Fahrenheit</span>
+              <span id="far">  </span><br>
+
+            <button id="replace">< ></button>
+        </div>
+
+            <script>
+                    function a() {
+                        var i;
+                        var numbers=document.getElementsByClassName('numbers')[0];
+                        var far_numbers=document.getElementsByClassName('numbers')[1];
+                        for(i=200;i>=0;i--){
+                            if(i%10==0){
+
+                                numbers.innerHTML+=i+"-----"+"<br><br>";
+                            }
+
+                        }
+                        for(i=400;i>=0;i--){
+                            if(i%20==0){
+                                far_numbers.innerHTML+=i+"-----"+"<br><br>";
+                            }
+
+                        }
+                    }
+                a();
+                var celsius=document.getElementById('celsius');
+                var celsie;
+                var f_p=document.getElementById('far');
+                var txt=document.getElementById('txt');
+                var fahrenheit;
+                var celsius_row=document.getElementById('index');
+                var far_row=document.getElementById('far_index');
+                var replace=document.getElementById('replace');
+                var lbl=document.getElementById('lbl');
+                var added=document.getElementById('add');
+
+                function replace_all() {
+
+                    if(celsius.id == "add"){
+
+                        celsius.id="celsius";
+                        lbl.textContent="Celsius";
+                        txt.textContent="Fahrenheit";
+
+                        celsius.addEventListener("input",get);
+
+                    }
+                    if(celsius.id == "celsius"){
+                        celsius.id="add";
+                        lbl.textContent="Fahrenheit";
+                        txt.textContent="Celsius";
+                         added=document.getElementById('add');
+                        added.addEventListener('input',fToc);
+                    }
+
+                }
+                function fToc() {
+                    var added=document.getElementById('add');
+                    fahrenheit=added.value;
+
+
+
+                    if(fahrenheit === ""){
+                        f_p.textContent="";
+                    }
+                    else{
+                        celsie = (fahrenheit - 32)/1.8;
+                        celsius_row.style.height=(fahrenheit*2)+"px";
+                        celsius_row.style.marginTop=(400-(fahrenheit*2))+"px";
+
+                        f_p.textContent=celsie;
+                        far_row.style.height=(celsie)+"px";
+                        far_row.style.marginTop=(400-(celsie))+"px";
+
+
+                    }
+                }
+
+                    function get() {
+                        celsie = celsius.value;
+
+
+                        if(celsie === ""){
+                            f_p.textContent="";
+                        }
+                        else{
+
+                            celsius_row.style.height=(celsie*2)+"px";
+                            celsius_row.style.marginTop=(400-(celsie*2))+"px";
+                            var fahrenheit=(celsie*1.8)+32;
+                            f_p.textContent=fahrenheit;
+                            far_row.style.height=(fahrenheit)+"px";
+                            far_row.style.marginTop=(400-(fahrenheit))+"px";
+
+                        }
+
+                    }
+
+
+                    if(celsius.id == "celsius"){
+
+
+                        celsius.addEventListener('input',get);
+                    }
+                   replace.addEventListener("click",replace_all);
+
+
+            </script>
+    </body>
+
+</html>

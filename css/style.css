@@ -1,0 +1,77 @@
+#celsius{
+    width: 30px;
+    height: 30px;
+    margin-right: 140px;
+
+}
+#add{
+    width: 30px;
+    height: 30px;
+    margin-right: 140px;
+
+}
+#far{
+    font-size: 20px;
+
+}
+.round{
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+    border-radius: 100px;
+    margin-top: 400px;
+    margin-left: 20px;
+    background-color: red;
+}
+#cels_div{
+    height:400px;
+    width: 20px;
+    border: 3px dotted red;
+    border-radius: 14px;
+    float: left;
+    overflow: hidden;
+
+}
+#far_div{
+    height:400px;
+    width: 20px;
+    border: 3px dotted red;
+    border-radius: 14px;
+    float: left;
+    overflow: hidden;
+}
+#far_index{
+    width: 20px;
+    background-color: red;
+    border-radius: 4px;
+}
+.center{
+    width: 600px;
+    margin: auto;
+}
+#index{
+    width: 20px;
+   background-color: red;
+    border-radius: 4px;
+
+
+}
+.numbers{
+    height:400px;
+    width: 20px;
+
+    border-radius: 4px;
+    float: left;
+    font-size: 8px;
+    margin-right: 20px;
+    padding:0px 10px ;
+    color: gray;
+}
+.left{
+    float: left;
+    margin-left: 40px;
+}
+.right{
+    float: right;
+    margin-right: 40px;
+}
